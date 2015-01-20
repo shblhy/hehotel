@@ -1,0 +1,18 @@
+#-*- coding:utf-8 -*-
+
+from com.mylib.tables import tables
+class OrderTable(tables.Table):
+    sn = tables.Column(sTitle=u'单号',bSortable=False)
+    #name = tables.Column(sTitle=u'名称', bSortable=False)
+    status = tables.Column(sTitle=u'状态', bSortable=False,accessor=lambda x:x.get_status_display())
+    room = tables.Column(sTitle=u'状态', bSortable=False,accessor=lambda x:x.room.name)
+    room_type = tables.Column(sTitle=u'状态', bSortable=False,accessor=lambda x:x.room_type.name)
+    comment = tables.Column(sTitle=u'说明', bSortable=False)
+    price = tables.Column(sTitle=u'价格', bSortable=False)
+    action= tables.Column(sTitle=u'操作', bSortable=False, accessor='view')#tables.Table.CALLBACK)    
+    
+    @classmethod
+    def get_action(cls,user=None):
+        actions = ['view']
+        actions.append('delete')
+        return ','.join(actions)

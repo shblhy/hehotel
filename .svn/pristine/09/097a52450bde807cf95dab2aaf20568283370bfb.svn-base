@@ -1,0 +1,52 @@
+ <div class="small-padding gray-background-color">
+    <form id="tb_users_search" name="tb_users_search">
+        <label>
+            <span class="pull-left mini-width text-right">用户名：</span>
+            <input type="text" name="username" class="small-width input-small" id="username"></label>
+        <label>
+            <span class="pull-left mini-width text-right">姓名：</span>
+            <input type="text" name="real_name" class="small-width input-small" id="real_name"></label>                
+            <a id="search" class="btn btn-primary" href="javascript:void(0)">查询</a>
+    </form>
+</div>
+<table id="tb_users" data-search="tb_users_search" class="table table-striped" ></table>
+<script type="text/javascript">
+    require(["jquery","functions","table","form"], function($,functions,table) {
+        $(function() {
+             var o =  {
+                "initData" :{{table.get_rows}},
+                "aoColumns":{{table.get_columns}},
+                "sAjaxSource": '/member/users.table',
+                "buttons": [{'type':'add','text':'新增','data-url':'/member/user/add'},{'type':'del','text':'删除','url':'/member/delete_users'},
+                {'text':'角色管理','data-url':'/member/groups'},
+                ],
+                "actions":[{
+                    type:"view",
+                    text:"详情",
+                    url:"/admin#/member/user/detail",
+                    style: 'restful',
+                    target: '_blank',
+                    iconClass:'icon-detail icon-color'
+                },{
+                    type:"edit",
+                    text:"编辑",
+                    url:"/admin#/member/user/edit",
+                    style: 'restful',
+                    target: '_blank',
+                    iconClass:'icon-edit icon-color'
+                },{
+                    type:"delete",
+                    text:"删除",
+                    url:"/member/delete_users",
+                    style: 'restful',
+                    iconClass:'icon-detail icon-color'
+                }]
+            }; 
+            var t = new table.Table('tb_users',o);
+            t.drawTable();
+            $('#search').click(function(){
+                t.search();
+            });
+        });
+    });
+</script>

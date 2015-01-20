@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+from member.models import User
+
+class Article(models.Model):
+    content = models.CharField(_(u'内容'),max_length=2000)
+    author = models.ForeignKey(User)
+    insert_time = models.DateTimeField(_(u'插入时间'),auto_now_add=True)
+    edit_time = models.DateTimeField(_(u'编辑时间'),auto_now_add=True)
+    status =  models.DateTimeField(_(u'状态'),default=0)
+    #pictures =

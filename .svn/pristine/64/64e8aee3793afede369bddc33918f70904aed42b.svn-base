@@ -1,0 +1,25 @@
+<form id="room_form" action="/room/add_room" method="post">
+    <label id="room_form_errmsg"></label>
+    <ul>
+        <li><label>*房号</label><input id="sn" name="sn" value="{{room.sn}}"/></li>
+        <li><label>*名称</label><input id="name" name="name" value="{{room.name}}"/></li>
+        <li><label>*状态</label><input id="status" name="status" value="{{room.status}}"/></li>
+        <li><label>*类型</label><input id="rtype" name="rtype" value="{{room.rtype}}"/></li>
+        <li><label>*介绍</label><input id="comment" name="comment" value="{{room.comment}}"/></li>
+        <li><label>备注</label><input id="note" name="note" value="{{room.note}}"/></li>
+        <li><label>照片</label><input id="photo" name="photo" value="{{room.photo}}"/></li>
+    </ul>
+    <button id="submit-room-btn">提交</button>
+ </form>
+ <script type="text/javascript">
+    require(["jquery","functions","form"], function($) {
+        $(function() {
+                $("#submit-room-btn").ajaxForm({
+                    dataType : "javascript",
+                    success: function(data) {
+                        functions.loadpage("/room/rooms");
+                    }
+                }).submit();
+        });
+    });
+</script>

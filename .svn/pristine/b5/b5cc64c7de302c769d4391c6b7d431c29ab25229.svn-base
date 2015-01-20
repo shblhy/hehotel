@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+from member.models import User
+
+class Article(models.Model):
+    title = models.CharField(_(u'标题'),max_length=2000)
+    content = models.CharField(_(u'内容'),max_length=2000)
+    author = models.ForeignKey(User)
+    insert_time = models.DateTimeField(_(u'插入时间'),auto_now_add=True)
+    edit_time = models.DateTimeField(_(u'编辑时间'),auto_now_add=True)
+    STATUS_CHOICES = {
+                      0:u'展示中',
+                      1:u'优先展示',
+                      2:u'已下架',
+                      -1:u'已删除',
+    }
+    status =  models.DateTimeField(_(u'状态'),default=0,choices =STATUS_CHOICES.items() )
+    #pictures =

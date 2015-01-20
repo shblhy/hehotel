@@ -1,0 +1,29 @@
+<!--预订页面，选择房间点预订后跳转至此-->
+<form id="order_form" action="/order/add_order" method="post">
+    <label id="order_form_errmsg"></label>
+    <ul>
+        <li><label>*房间类型</label><input id="room_type" value="{{room_type.name}}" readonly="readonly"/>
+            <input type="hidden" id="room_type_id" name="room_type_id" value="{{room_type.id}}" readonly="readonly"/>
+        </li>
+        <!--li><label>可选房间</label><>
+        </li-->
+        <li><label>*入住时间</label><input id="" name="use_time" value="{{order.room.use_time}}"/></li>
+        <li><label>*入住天数</label><input id="" name="use_days" value="{{order.room.use_days}}"/></li>
+        <li><label>*顾客姓名</label><input id="customer" name="customer" value="{{order.customer}}"/></li>
+        <li><label>*手机(未注册用户可以手机为账号登录网站)</label><input id="phone" name="phone" value="{{order.phone}}"/></li>
+        <li><label>备注</label><input id="note" name="note" value="{{order.note}}"/></li>
+    </ul>
+    <button id="submit-order-btn">提交</button>
+ </form>
+ <script type="text/javascript">
+    require(["jquery","functions","form"], function($) {
+        $(function() {
+                $("#submit-order-btn").ajaxForm({
+                    dataType : "javascript",
+                    success: function(data) {
+                        functions.loadpage("/order/orders");
+                    }
+                }).submit();
+        });
+    });
+</script>

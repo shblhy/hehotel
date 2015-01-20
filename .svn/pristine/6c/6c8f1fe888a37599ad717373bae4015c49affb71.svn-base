@@ -1,0 +1,23 @@
+<!--假想订单新增页面-->
+<form id="order_form" action="/order/add_order" method="post">
+    <label id="order_form_errmsg"></label>
+    <ul>
+        <li><label>*房间</label><input id="room" name="room" value="{{order.room.name}}"/></li>
+        <li><label>*顾客姓名</label><input id="customer" name="customer" value="{{order.customer}}"/></li>
+        <li><label>*手机</label><input id="phone" name="phone" value="{{order.phone}}"/></li>
+        <li><label>备注</label><input id="note" name="note" value="{{order.note}}"/></li>
+    </ul>
+    <button id="submit-order-btn">提交</button>
+ </form>
+ <script type="text/javascript">
+    require(["jquery","functions","form"], function($) {
+        $(function() {
+                $("#submit-order-btn").ajaxForm({
+                    dataType : "javascript",
+                    success: function(data) {
+                        functions.base.load_page("/order/orders");
+                    }
+                }).submit();
+        });
+    });
+</script>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html><head>
+<title>日历控制</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+	html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+	table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+	body {
+        font: 12px/1.5 arial；
+    }
+	#calendar-module {
+        padding: 3px;
+        width: 317px;
+        border: #DDCFAC 1px solid;
+        background-color: #FFF;
+        overflow: hidden;
+    }
+    .ctrol-close-wrap {
+        height: 20px;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .table1-module,
+    .table2-module {
+        border: 1px solid #DDCFAC;
+    }
+	.table1-module {
+        margin-right: 3px;
+    }
+    td {
+        font-size: 12px;
+        text-align: center;
+    }
+    td.dt {
+        font-size: 12px;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: #5f6062;
+    }
+    a.bt {
+        color: #888;
+    }
+    .tb1-title,
+    .tb3-title {
+        text-align: left;
+    }
+    .tb1-title span {
+        padding: 0 0 0 10px;
+    }
+    .tb3-title span {
+        padding: 0 0 0 55px;
+    }
+    .tb-hd {
+        width: 100%;
+        height: 19px;
+        background-color: #ECE5CB;
+    }
+    .tb-hd #yyyymm span,
+    .tb-hd #yyyymm1 span {
+        color: #888;
+        font-weight: 700;
+    }
+    .tb-content {
+        background-color: #F4EFDF;
+        width: 100%;
+    }
+    .tb-content,
+    .tb-content td {
+        border: 1px solid #fff;
+    }
+    .tb-content span,
+    .tb-content a {
+        display: block;
+        padding-right: 5px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: right;
+        overflow: hidden;
+    }
+	.tb-content span {
+        background-color: #ECE5CB;
+        color: #aaa;
+	}
+    .tb-content a {
+        background-color: #DDCFAC;
+        color: #826C30;
+    }
+    .tb-content td {
+        width: 21px;
+        height: 16px;
+        overflow: hidden;
+    }
+    .tb-content .today,
+    .tb-content a:hover {
+        background-color: #A79153;
+		color:#6C5631;
+    }
+    .tb-content tr.week-navi,
+    .tb-content tr.week-navi td {
+        border: 0 none;
+        height: 24px;
+        font-weight: 700;
+        color: #999;
+    }
+    #prev,
+    #next {
+        width: 30%;
+    }
+    #yyyymm,
+    #yyyymm1 {
+        width: 70%;
+    }
+    #prev a,
+    #next a {
+        display: block;
+        background: url("/images/calendar-arrow-packs.png") no-repeat;
+        width: 4px;
+        height: 7px;
+        outline: none;
+        text-indent: -9999em;
+    }
+    #prev a {
+        background-position: 0 0;
+        margin-left: 10px;
+        float: left;
+    }
+    #next a {
+        background-position: -4px 0;
+        margin-right: 10px;
+        float: right;
+    }
+    .close {
+        display: block;
+        float: right;
+        width: 16px;
+        height: 16px;
+        background: url("/images/calendar-close.png") no-repeat 0 0;
+        text-indent: -9999em;
+    }
+    .tbl-td {
+        background-color: #fff;
+    }
+</style>
+<script language="javascript" type="text/javascript" charset="UTF-8">
+var str='',
+    i,
+    j,
+    yy,
+    mm,
+    yyn,
+    mmn,
+    openbound,
+    callback,
+    str1='',
+    li = 0;
+
+var fld1,
+    fld2;
+
+var wp = window.parent;
+
+var cf = wp.document.getElementById("CalFrame");
+
+var fld,
+    curday,
+    today = new Date();
+today.setHours(0);today.setMinutes(0);today.setSeconds(0);today.setMilliseconds(0);
+
+function parseDate(s) {
+	var reg=new RegExp("[^0-9-]","")
+	if(s.search(reg)>=0)return today;
+	var ss=s.split("-");
+	if(ss.length!=3)return today;
+	if(isNaN(ss[0])||isNaN(ss[1])||isNaN(ss[2]))return today;
+	return new Date(parseFloat(ss[0]),parseFloat(ss[1])-1,parseFloat(ss[2]));
+}
+function resizeCalendar(){cf.width=326;cf.height=167;}
+function initCalendar(){
+	if(fld1&&fld1.value.length>0){curday=parseDate(fld1.value);}
+	else if(fld2&&fld2.value.length>0){curday=parseDate(fld2.value);}
+	else curday=today;
+	if(fld2){
+	    curday=parseDate(fld2.value);
+	}
+    if( li ) {
+        var liDate = new Date(fld2.value.replace(/-/g, '/'));
+        liDate.setDate(liDate.getDate()+1);
+        today = liDate;
+    } else {
+        today = new Date();
+        today.setHours(0);today.setMinutes(0);today.setSeconds(0);today.setMilliseconds(0);
+    }
+	drawCalendar(curday.getFullYear(),curday.getMonth());
+}
+function drawCalendar(y,m){
+	var x=new Date(y,m,1),mv=x.getDay(),d=x.getDate(),de;
+	var xn=new Date(y,m+1,1),mvn=xn.getDay(),dn=xn.getDate(),den;
+	yy=x.getFullYear();mm=x.getMonth();
+	yyn=xn.getFullYear();mmn=xn.getMonth();
+	document.getElementById("yyyymm").innerHTML='<span>'+yy+"."+(mm+1>9?mm+1:"0"+(mm+1))+'</span>';
+	document.getElementById("yyyymm1").innerHTML='<span>'+yyn+"."+(mmn+1>9?mmn+1:"0"+(mmn+1))+'</span>';
+	for(var i=1;i<=mv;i++){
+		de=document.getElementById("d"+i);
+		de.innerHTML="";
+		de.bgColor="";
+	}
+
+	for(var i=1;i<=mvn;i++){
+		den=document.getElementById("r"+i);
+		den.innerHTML="";
+		den.bgColor="";
+	}
+
+	while(xn.getMonth()==mmn){
+		den=document.getElementById("r"+(dn+mvn));
+		if(xn.getTime()==curday.getTime())
+			den.bgColor="#dddddd";
+		else
+			den.bgColor="white";
+		if(xn.getTime()==today.getTime())
+			den.innerHTML="<a href=javascript:setDate1("+dn+");>"+dn+"</a>";
+		else if(xn.getTime()<today.getTime())
+			if(openbound){den.innerHTML="<a href=javascript:setDate1("+dn+"); class=bt>"+dn+"</a>";}
+			else{den.innerHTML="<span>"+dn+"</span>";}
+		else
+			den.innerHTML="<a href=javascript:setDate1("+dn+");>"+dn+"</a>";
+		xn.setDate(++dn);
+	}
+	while(dn+mvn<=42){
+		den=document.getElementById("r"+(dn+mvn));
+		den.innerHTML="";
+		den.bgColor="";
+		dn++;
+	}
+
+	while(x.getMonth()==mm){
+		de=document.getElementById("d"+(d+mv));
+		if(x.getTime()==today.getTime())
+			de.innerHTML="<a class='today' href=javascript:setDate("+d+");>"+d+"</a>";
+		else if(x.getTime()<today.getTime())
+			if(openbound){de.innerHTML="<a href=javascript:setDate("+d+"); class=bt>"+d+"</a>";}
+			else{de.innerHTML="<span class='old'>"+d+"</span>";}
+		else
+			de.innerHTML="<a href=javascript:setDate("+d+");>"+d+"</a>";
+		x.setDate(++d);
+	}
+	while(d+mv<=42){
+		de=document.getElementById("d"+(d+mv));
+		de.innerHTML="";
+		de.bgColor="";
+		d++;
+	}
+}
+function setDate(d){
+	wp.hideCalendar();
+	var dstr=yy+"-"+(mm+1)+"-"+d;
+	if(callback&&callback.length>0){fld1.value=dstr;eval("wp."+callback+"()");}
+	else{fld1.value=dstr;fld1.select();}
+}
+function setDate1(d){
+	wp.hideCalendar();
+	var dstr1=yyn+"-"+(mmn+1)+"-"+d;
+	if(callback&&callback.length>0){fld1.value=dstr1;eval("wp."+callback+"()");}
+	else{fld1.value=dstr1;fld1.select();}
+}
+function clearValue(){
+   if(callback != "undefined")
+        fld1.value = "";
+   else
+        fld2.value = "";
+   wp.hideCalendar();
+}
+</script>
+</head>
+<body onload="resizeCalendar();">
+	<div id="calendar-module">
+		<table id="tbl0" cellpadding="0" cellspacing="0">
+			<!--<tr class="ctrol-close">
+				<td colspan="2">
+					<a class="close" href="javascript:wp.hideCalendar();" title="关闭日历">关闭</a>
+				</td>
+			</tr>-->
+			<tbody><tr>
+				<td class="tbl-td" valign="top">
+					<div class="table1-module">
+						<table id="Table1" class="tb-hd" cellpadding="0">
+							<tbody><tr>
+								<td id="prev"><a href="javascript:drawCalendar(yy,mm-1);" title="上一月">PREV</a></td>
+								<td id="yyyymm" class="tb1-title"></td>
+							</tr>
+						</tbody></table><!-- end #table1 -->
+						<table id="Table2" class="tb-content" cellpadding="0">
+							<tbody><tr class="week-navi">
+								<td class="sun">日</td>
+								<td class="mon">一</td>
+								<td class="tue">二</td>
+								<td class="wed">三</td>
+								<td class="thu">四</td>
+								<td class="fri">五</td>
+								<td class="sat">六</td>
+							</tr>
+							<script language="javascript">
+							for(i=0;i<6;i++){
+								str+="<tr>";
+								for(j=1;j<=7;j++)str+="<td id=d"+(i*7+j)+" class=dt></td>";
+								str+="</tr>";
+							}
+							document.write(str);
+							</script><tr><td id="d1" class="dt"></td><td id="d2" class="dt"></td><td id="d3" class="dt"></td><td id="d4" class="dt"></td><td id="d5" class="dt"></td><td id="d6" class="dt"></td><td id="d7" class="dt"></td></tr><tr><td id="d8" class="dt"></td><td id="d9" class="dt"></td><td id="d10" class="dt"></td><td id="d11" class="dt"></td><td id="d12" class="dt"></td><td id="d13" class="dt"></td><td id="d14" class="dt"></td></tr><tr><td id="d15" class="dt"></td><td id="d16" class="dt"></td><td id="d17" class="dt"></td><td id="d18" class="dt"></td><td id="d19" class="dt"></td><td id="d20" class="dt"></td><td id="d21" class="dt"></td></tr><tr><td id="d22" class="dt"></td><td id="d23" class="dt"></td><td id="d24" class="dt"></td><td id="d25" class="dt"></td><td id="d26" class="dt"></td><td id="d27" class="dt"></td><td id="d28" class="dt"></td></tr><tr><td id="d29" class="dt"></td><td id="d30" class="dt"></td><td id="d31" class="dt"></td><td id="d32" class="dt"></td><td id="d33" class="dt"></td><td id="d34" class="dt"></td><td id="d35" class="dt"></td></tr><tr><td id="d36" class="dt"></td><td id="d37" class="dt"></td><td id="d38" class="dt"></td><td id="d39" class="dt"></td><td id="d40" class="dt"></td><td id="d41" class="dt"></td><td id="d42" class="dt"></td></tr>
+						</tbody></table><!-- end #Table2 -->
+					</div>
+				</td>
+				<td class="tbl-td" valign="top">
+					<div class="table2-module">
+						<table id="Table3" class="tb-hd" cellpadding="0">
+							<tbody><tr>
+								<td id="yyyymm1" class="tb3-title"></td>
+								<td id="next"><a href="javascript:drawCalendar(yy,mm+1);" title="下一月">NEXT</a>
+								</td>
+							</tr>
+						</tbody></table><!-- end #Table3 -->
+						<table id="Table4" class="tb-content" cellpadding="0">
+							<tbody><tr class="week-navi">
+								<td class="sun">日</td>
+								<td class="mon">一</td>
+								<td class="tue">二</td>
+								<td class="wed">三</td>
+								<td class="thu">四</td>
+								<td class="fri">五</td>
+								<td class="sat">六</td>
+							</tr>
+							<script language="javascript">
+							for(i=0;i<6;i++){
+								str1+="<tr>";
+								for(j=1;j<=7;j++)str1+="<td id=r"+(i*7+j)+" class=dt></td>";
+								str1+="</tr>";
+							}
+							document.write(str1);
+							</script><tr><td id="r1" class="dt"></td><td id="r2" class="dt"></td><td id="r3" class="dt"></td><td id="r4" class="dt"></td><td id="r5" class="dt"></td><td id="r6" class="dt"></td><td id="r7" class="dt"></td></tr><tr><td id="r8" class="dt"></td><td id="r9" class="dt"></td><td id="r10" class="dt"></td><td id="r11" class="dt"></td><td id="r12" class="dt"></td><td id="r13" class="dt"></td><td id="r14" class="dt"></td></tr><tr><td id="r15" class="dt"></td><td id="r16" class="dt"></td><td id="r17" class="dt"></td><td id="r18" class="dt"></td><td id="r19" class="dt"></td><td id="r20" class="dt"></td><td id="r21" class="dt"></td></tr><tr><td id="r22" class="dt"></td><td id="r23" class="dt"></td><td id="r24" class="dt"></td><td id="r25" class="dt"></td><td id="r26" class="dt"></td><td id="r27" class="dt"></td><td id="r28" class="dt"></td></tr><tr><td id="r29" class="dt"></td><td id="r30" class="dt"></td><td id="r31" class="dt"></td><td id="r32" class="dt"></td><td id="r33" class="dt"></td><td id="r34" class="dt"></td><td id="r35" class="dt"></td></tr><tr><td id="r36" class="dt"></td><td id="r37" class="dt"></td><td id="r38" class="dt"></td><td id="r39" class="dt"></td><td id="r40" class="dt"></td><td id="r41" class="dt"></td><td id="r42" class="dt"></td></tr>
+						</tbody></table><!-- end #Table4 -->
+					</div>
+				</td>
+			</tr>
+		</tbody></table><!-- end #tbl0 -->
+	</div>
+	<script language="javascript">
+		var bCalLoaded=true;
+	</script>
+
+
+</body></html>

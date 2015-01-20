@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+import unittest
+from room.models import Room
+
+class RoomTest(unittest.TestCase):
+    def runTest(self):
+        print test_get_random_room()
+def test_get_random_room():
+    return Room.objects.raw('select * from room where status=0 and room_type_id=2 Order By Rand() Limit 1')[0]
+    
+        

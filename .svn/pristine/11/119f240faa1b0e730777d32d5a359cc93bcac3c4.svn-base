@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+import unittest
+from room.models import Room,RoomType
+
+class RoomTest(unittest.TestCase):
+    def runTest(self):
+        #print test_get_random_room()
+        test_save_room_type()
+#def test_get_random_room():
+#    return Room.objects.raw('select * from room where status=0 and room_type_id=2 Order By Rand() Limit 1')[0]
+    
+def test_save_room_type():
+    rtype = RoomType()
+    rtype.name = '标双22'
+    rtype.photo = 'test.jpg'
+    rtype.comment = 'test'
+    rtype.save()

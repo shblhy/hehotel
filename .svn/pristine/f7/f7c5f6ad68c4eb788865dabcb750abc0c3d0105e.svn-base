@@ -1,0 +1,307 @@
+@charset "utf-8";
+/*!
+ * Dossm Home v1.1
+ * Copyright 2012 Wintour, Inc.
+ * Description : Dossm Home css.
+ * Author : sam.zeng@wintour.cn
+ * Date : 08/01/2012
+ */
+
+/******************************
+* Layout
+******************************/
+.header {
+    height: 563px;
+}
+.nav {
+	background: url(/static/ref/images/home-nav-bg.png) no-repeat 0 0;
+	height: 383px;
+}
+.main {
+	background: #fff;
+}
+.main .content {
+    float: left;
+    width: 630px;
+	padding: 25px 22px;
+}
+.main .sidebar {
+    width: 254px;
+	height: 210px;
+	margin: 35px 20px 33px 0;
+	overflow: hidden;
+	background: url(/static/ref/images/home-sider-content-bg.png) no-repeat 0 0;
+    float: right;
+}
+.header .book-index {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 699px;
+	height: 50px;
+	background: url(/static/ref/images/home-book-bg.png) repeat-x left bottom #877f62;
+	border-right: 1px solid #A19053;
+}
+.book-index .book-index-item {
+	position:absolute;
+	bottom: 10px;
+	width: 349px;
+}
+.book-index .book-room-reservation {
+    left: 0;
+}
+.book-index .book-special-offers {
+    right: 0px;
+}
+.book-index .book-index-item .book-index-title {
+	width: 100%;
+	height: 40px;
+	background: url(/static/ref/images/home-book-item-bg.png) no-repeat 0 0;
+}
+.book-index .book-index-title a {
+	color: #EEEBE1;
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	height: 100%;
+	line-height: 40px;
+	text-indent: 19px;
+	width: 100%;
+}
+.book-index .book-index-item .book-index-content {
+	padding: 10px 14px;
+	width: 321px;
+	height: 110px;
+	overflow: hidden;
+	background-color: #f3f5e1;
+	display: none;
+}
+.book-room-reservation-content .form-item,
+.book-room-reservation-content .popup-trigger {
+	float: left;
+}
+.book-room-reservation-content .popup-trigger {
+	height: 22px;
+	line-height: 22px;
+}
+.book-room-reservation-content label {
+	width: 100%;
+	display: block;
+	line-height: 20px;
+	height: 20px;
+}
+.check-in-item ,
+.check-out-item {
+	position: relative;
+	width: 151px;
+	height: 23px;
+	display:inline-block;
+	+display:inline;
+	_display:inline;
+	zoom: 1;
+}
+.check-in-item {
+	margin-right: 9px;
+}
+.date-item span .icon-calendar {
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	width: 19px;
+	height: 19px;
+	background: url(/static/ref/images/book-icon-calendar.png) no-repeat 0 0;
+}
+.book-room-reservation-content .input-text {
+	border-color: #b49f51;
+}
+.date-item .input-text {
+	width: 145px;
+}
+.code-item .input-text {
+	width: 145px;
+}
+.book-room-reservation-content .code-item {
+	height: 41px;
+}
+.book-room-reservation-content .code-item {
+	width: 161px;
+}
+.book-room-reservation-content .button-item {
+	width: 153px;
+	height: 50px;
+}
+.button-item .button-order-search {
+	width: 143px;
+	margin-top: 15px;
+}
+.popup-trigger li {
+	float: left;
+	margin-right: 14px;
+	padding-left: 12px;
+	background: url(/static/ref/images/icon-dotted-arrow-brown.png) no-repeat left center;
+}
+.popup-trigger li a {
+	color: #5d3318;
+	text-decoration: underline;
+	font-family: \5b8b\4f53;
+}
+/**
+ * Slideshow
+ */
+.slide {
+    height: 449px;
+}
+.slide a ,
+.slide img {
+    width: 698px;
+    height: 449px;
+}
+/******************************
+* Scroll Banner
+******************************/
+.scroll-banner {
+    position: relative;
+    padding: 0 35px;
+    width: 250px;
+	height: 110px;
+    zoom: 1;
+}
+.scroll-banner .scroll-list-wrap {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+}
+.scroll-banner .scroll-list {
+    position: absolute;
+    z-index: 2;
+}
+.scroll-banner .scroll-item {
+    display: block;
+	float:left;
+    width: 250px;
+}
+.scroll-banner .scroll-item a {
+	font-size: 14px;
+	font-weight: 700;
+	color: #514826;
+}
+.scroll-banner li .detail-info {
+    display: block;
+    width: 100%;
+}
+.scroll-banner .detail-info h4 {
+	margin-bottom: 8px;
+}
+.scroll-banner .detail-info p {
+	line-height: 20px;
+	color: #514826;
+}
+.offer-data {
+    display: none;
+}
+.scroll-banner .scroll-prev,
+.scroll-banner .scroll-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+	margin-top: -9px;
+	width: 10px;
+	height: 18px;
+	background: url(/static/ref/home-slide-btn.png) no-repeat 0 0;
+	line-height: 9999px;
+    overflow: hidden;
+}
+.scroll-banner .scroll-prev {
+    left: 0;
+	background-position: 0 -18px;
+}
+.scroll-banner .scroll-next {
+    right: 0;
+	background-position: 0 0;
+}
+/**
+ * Content
+ */
+.content-subtitle ,
+.content-title {
+	color: #7f703b;
+	font-family: \5FAE\8F6F\96C5\9ED1;
+	font-weight: normal;
+    margin-bottom: 10px;
+}
+.content-title {
+    font-size: 24px;
+	font-weight: normal;
+}
+.content-subtitle {
+	font-size: 18px;
+	font-weight: 400;
+}
+.sidebar .tab-trigger {
+    border-bottom: 1px solid #000;
+}
+.tab-trigger li {
+    float: left;
+    margin-right: 10px;
+}
+.content .entry-text {
+	line-height: 22px;
+}
+.sidebar .contact-panel-container {
+	padding: 17px;
+}
+.sidebar .contact-panel-container p {
+	line-height: 34px;
+	color: #514826;
+}
+.sidebar .contact-panel-container a {
+	display: block;
+	color: #fff7d4;
+}
+.sidebar .contact-panel-container span a {
+	display: inline;
+	color: #514826;
+}
+.sidebar .contact-panel-container span {
+	display: inline-block;
+}
+.sidebar strong {
+	font-weight: normal;
+}
+.download-apps {
+	padding: 0 13px;
+}
+.download-apps p ,
+.download-apps a {
+	float: left;
+}
+.download-apps p {
+	width: 100%;
+	margin-bottom: 9px;
+	font-weight: 700;
+	color: #634813;
+}
+.download-apps a {
+	display: block;
+	width: 73px;
+	height: 17px;
+	line-height:999px;
+	margin-right: 4px;
+	overflow: hidden;
+	background: url(/static/ref/images/button-apps.png) no-repeat 0 0;
+}
+.download-apps .iphone-apps {
+	background-position: 0 0;
+}
+.download-apps .ipad-apps {
+	background-position: 0 -18px;
+}
+.download-apps .android-apps {
+	background-position: 0 -36px;
+	margin-right: 0;
+}
+.more-item, .button-more-text a {
+	color: #b9a768;
+}

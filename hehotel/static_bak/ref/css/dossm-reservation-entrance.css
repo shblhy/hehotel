@@ -1,0 +1,83 @@
+@charset "utf-8";
+/*!
+ * Dossm Reservation Entrance v1.1
+ * Copyright 2012 Wintour, Inc.
+ * Description: Popup Type Reservation Entrance.
+ * Author: sam.zeng@wintour.cn
+ * Date: 08/06/2012
+ */
+.book {
+    margin: 0 auto;
+    width: 240px;
+	padding-bottom: 50px;
+}
+.book label {
+    display: block;
+    margin: 3px 0;
+    color: #3f3f45;
+}
+.book .icon {
+    position: absolute;
+    top: 2px;
+    right: 39px;
+    width: 21px;
+    height: 21px;
+    font-size: 0;
+    background: url(/images/book-icon-calendar.png) no-repeat 0 0;
+    overflow: hidden;
+}
+.book .input-text {
+    width: 169px;
+    color: #6a5e50;
+    border: #a49888 1px solid;
+    background-color: #ece4d7;
+}
+.book .book-title {
+    background: url(/images/aside-book-title-bg.png) no-repeat 0 0;
+	height: 35px;
+	line-height: 999px;
+	overflow: hidden;
+	width: 100%;
+}
+.book .book-title span {
+    display: block;
+    height: 19px;
+    text-indent: -9999em;
+    background-repeat: no-repeat;
+}
+.book .form-item,
+.book .popup-trigger {
+    margin: 0 auto;
+    width: 216px;
+}
+.book .check-in-item,
+.book .check-out-item {
+    display: block;
+    position: relative;
+    margin-bottom: 4px;
+    width: 100%;
+    height: 27px;
+}
+.book .code-item {
+    margin-bottom: 7px;
+}
+.book .button-item {
+    margin-bottom: 10px;
+    height: 35px;
+}
+.book .button-order-search {
+    width: 167px;
+}
+.book .popup-trigger a {
+    padding-left: 12px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    background: url(/images/icon-dotted-arrow-right.png) no-repeat left center;
+}
+.book-wrapper .tab-trigger {
+	display: none;
+}
+.book-wrapper .button-close {
+	display: none;
+}

@@ -1,0 +1,468 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!--link rel="stylesheet" href="/static/base/css/style.css" type="text/css" media="all"/-->
+	<link media="all" href="/static/ref/css/dossm-base-min.css" rel="stylesheet">
+	<link media="screen" href="/static/ref/css/dossm-global.css" rel="stylesheet">
+	<link media="screen" href="/static/ref/css/jquery-fancybox.css" rel="stylesheet">
+	<link media="screen" href="/static/ref/css/dossm-home.css" rel="stylesheet">
+	<link media="screen" href="/static/ref/css/dossm-zh-cn.css" rel="stylesheet">
+    <link media="screen" href="/static/ref/css/dossm-zh-cn.css"rel="stylesheet">
+    <link media="screen" href="/static/base/css/style_.css" rel="stylesheet">
+    
+    <!--暂时不启用requirejs，将js全部包含进来，逐步衍进-->
+    <script type="text/javascript" src="/static/base/js/require-config.js"></script>
+    <script type="text/javascript" src="/static/base/com/require-jquery1.9-migrate1.1.js"></script>
+    <!--启用requirejs   
+    <script type="text/javascript" src="/static/base/com/javascript-ext.js"></script>
+    <script type="text/javascript" src="/static/base/com/bootstrap-modified.js"></script>
+    <script type="text/javascript" src="/static/base/com/jquery.form.js"></script>
+    <script type="text/javascript" src="/static/base/js/functions.js"></script>
+    -->
+	<title>道县万豪假日酒店官方网站|最低房价保证，更多优惠服务</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="道县万豪假日酒店，道县酒店，道县五星级酒店，道县5星级酒店，道县靠海酒店，道县度假酒店，道县酒店预订，道县酒店预定，道县商务酒店" name="keywords">
+	<meta content="道县万豪假日酒店官方网站预订，价格最优，更多优惠。道县万豪假日酒店屹立于道县最为繁华的商业地带，是商务旅行和休闲度假的首选之地。" name="description">
+</head>
+<body class="home-page">
+	<div class="wrapper">
+		<div class="header">
+			<h1 class="logo">
+				<a title="万县假日" href="/">
+					<img alt="万县假日" src="/static/ref/images/503aee1132f69.png">
+				</a>
+			</h1>
+			<div class="toolbar">
+				<div class="common_member_wrap">
+					<i class="icon icon-member"></i>
+					<span id="member-entrance">
+						<a class="member-login" href="javascript:;" id="show-login-btn" data-logined={%if request.user.is_authenticated%}true{%else%}false{%endif%} data-superuser={%if request.user.is_superuser%}true{%else%}false{%endif%} >登录</a>
+						| 
+						<a class="member-register" href="javascript:;" id="show-regist-btn">注册</a>
+					</span>
+					<a class="online-pay" href="online_pay.html">
+						<span class="online-pay-text">快捷支付</span>
+					</a>
+				</div>
+				<div class="common_language_wrap">
+					<a class="go-home" href="" rel="nofollow">首页</a>
+					| 
+					<span class="language">
+						<a class="zh-tw" href="javascript:void(0)" title="收藏">
+							<span>收藏</span>
+						</a>
+					</span>
+				</div>
+				<div class="focus-modul">
+					<div class="follow fn-clear">
+						<span class="follow-text">关注</span>
+						<ul>
+							<li style="display: list-item;">
+								<a class="sina-weibo" target="_blank" href="http://e.weibo.com/gbvh">新浪微博</a>
+							</li>
+							<li style="display: none;">
+								<a class="qq-weibo" target="_blank" href="">腾讯微博</a>
+							</li>
+							<li style="display: none;">
+								<a class="renren" target="_blank" href="">人人网</a>
+							</li>
+						</ul>
+						<a class="left-btn" href="javascript:;"></a>
+						<a class="right-btn" href="javascript:;"></a>
+					</div>
+				</div>
+			</div>
+			<ul class="nav">
+				<li class="nav-item-first ">
+					<a data-href="hotel" href="javascript:void(0)" id="a_hotel" >
+						<span>酒店介绍</span>
+					</a>
+				</li>
+				<li>
+					<a data-href="rooms" href="javascript:void(0)" id="a_rooms" >
+						<span>房间住宿</span>
+					</a>
+				</li>
+				<li class="nav-item-last nav-offers-item">
+					<a data-href="special_offers" href="javascript:void(0)" id="a_special_offers" >
+						<span>图文活动</span>
+					</a>
+				</li>
+			</ul>
+			<div id="js-slide" class="slide">
+				<a title="体验非凡海湾" href="#" style="position: absolute; display: none;">
+					<img alt="体验非凡海湾" src="/static/ref/images/5046ef6b2edbe.698x359.jpg">
+				</a>
+				<a title="体验非凡海湾" href="#" style="position: absolute; display: none;">
+					<img alt="体验非凡海湾" src="/static/ref/images/51d3e489e222e.jpg">
+				</a>
+				<a title="浪漫迷人景致" href="+" style="position: absolute; display: none;">
+					<img alt="浪漫迷人景致" src="/static/ref/images/51d3f0ce7ab3a.jpg">
+				</a>
+				<a title="贵宾楼·豪华海景套房" href="#" style="position: absolute; display: none;">
+					<img alt="贵宾楼·豪华海景套房" src="/static/ref/images/51d3f0f795dac.jpg">
+				</a>
+				<a title="贵宾楼·经典海景套房" href="#" style="position: absolute; display: block; opacity: 0.815067;">
+					<img alt="贵宾楼·经典海景套房" src="/static/ref/images/51d3f31a40e16.jpg">
+				</a>
+				<a title="贵宾楼·豪华海景套房" href="#" style="position: absolute; display: block; opacity: 0.184933;">
+					<img alt="贵宾楼·豪华海景套房" src="/static/ref/images/5046f507edb5b.698x359.jpg">
+				</a>
+				<a title="至臻完美宴会" href="#" style="position: absolute; display: none;">
+					<img alt="至臻完美宴会" src="/static/ref/images/51d3f413d0f81.jpg">
+				</a>
+				<a title="至臻完美会议" href="#" style="position: absolute; display: none;">
+					<img alt="至臻完美会议" src="/static/ref/images/5046f66318a12.698x359.jpg">
+				</a>
+				<a title="环球自助美食" href="#" style="position: absolute; display: none;">
+					<img alt="环球自助美食" src="/static/ref/images/5046fbc7c319d.698x359.jpg">
+				</a>
+				<a title="啤酒花园" href="#" style="position: absolute; display: none;">
+					<img alt="啤酒花园" src="/static/ref/images/5046fd9dcdb11.698x359.jpg">
+				</a>
+				<a title="时尚艺术美食" href="#" style="position: absolute; display: none;">
+					<img alt="时尚艺术美食" src="/static/ref/images/5046fdd1c0331.698x359.jpg">
+				</a>
+				<a title="健身休闲瑜伽" href="#" style="position: absolute; display: none;">
+					<img alt="健身休闲瑜伽" src="/static/ref/images/504702512dad6.698x359.jpg">
+				</a>
+				<a title="健身俱乐部" href="#" style="position: absolute; display: none;">
+					<img alt="健身俱乐部" src="/static/ref/images/5046fe9b04102.698x359.jpg">
+				</a>
+				<a title="时尚购物廊" href="#" style="position: absolute; display: none;">
+					<img alt="时尚购物廊" src="/static/ref/images/5046f66318a12.698x359.jpg">
+				</a>
+				<a title="体验非凡海湾" href="#" style="position: absolute; display: none;">
+					<img alt="体验非凡海湾" src="/static/ref/images/5046f66318a12.698x359.jpg">
+				</a>
+				<a title="浪漫晚霞之约" href="*" style="position: absolute; display: none;">
+					<img alt="浪漫晚霞之约" src="/static/ref/images/5046f66318a12.698x359.jpg">
+				</a>
+				<a title="绝佳地理位置" href="#" style="position: absolute; display: none;">
+					<img alt="绝佳地理位置" src="/static/ref/images/504703c1b6140.698x359.jpg">
+				</a>
+				<a title="经典港式早茶" href="#" style="position: absolute; display: none;">
+					<img alt="经典港式早茶" src="/static/ref/images/51d54a25c354d.jpg">
+				</a>
+				<a title="海湾壹品厅房" href="#" style="position: absolute; display: none;">
+					<img alt="海湾壹品厅房" src="/static/ref/images/51d54ab5d0514.698x359.jpg">
+				</a>
+				<a title="瀑布酒廊欢乐时光" href="#" style="position: absolute; display: none;">
+					<img alt="瀑布酒廊欢乐时光" src="/static/ref/images/51d54b7057d0b.jpg">
+				</a>
+				<div class="slide-title-bg" style="opacity: 0.7;"></div>
+				<div class="slide-title-text">贵宾楼·豪华海景套房</div>
+				<div class="btn-switch">
+					<a class="slide-prev" title="Prev" href="javascript:;">Prev</a>
+					<a class="slide-pause" title="Pause" href="javascript:;">Pause</a>
+					<a class="slide-next" title="Next" href="javascript:;">Next</a>
+				</div>
+			</div>
+			<div class="book-index fn-clear">
+				<div class="book-index-item book-room-reservation">
+					<div class="book-index-title book-room-reservation-title">
+						<a id="toggle-reservation" rel="nofollow" href="javascript:;" title="客房在线预订">客房在线预订</a>
+					</div>
+					<div id="book-room-reservation-content" class="book-index-content book-room-reservation-content" style="display: none;">
+						<div id="js-reservation-entrance" class="book" style="left: 230px;">
+							<form action="#">
+								<fieldset>
+									<legend class="hide">客房预订</legend>
+									<div class="form-item date-item fn-clear">
+										<label class="label title-check-in" for="book-check-in">抵离时间</label>
+										<span class="check-in-item">
+											<a id="icon-check-in" class="icon icon-calendar" rel="nofollow" onclick="event.cancelBubble=true;showCalendar('icon-check-in',false,'book-check-in',null,'setRoomCheckInDate')" title="选择入住日期" href="javascript:;"></a>
+											<input id="book-check-in" class="input-text input-check-in" type="text" onclick="event.cancelBubble=true;showCalendar('icon-check-in',false,'book-check-in',null,'setRoomCheckInDate')" autocomplete="off" readonly="readonly">
+										</span>
+										<span class="check-out-item">
+											<a id="icon-check-out" class="icon icon-calendar" rel="nofollow" onclick="event.cancelBubble=true;showCalendar('icon-check-out',false,'book-check-out','book-check-in')" title="选择离开日期" href="javascript:;"></a>
+											<input id="book-check-out" class="input-text input-check-out" type="text" onclick="event.cancelBubble=true;showCalendar('icon-check-out',false,'book-check-out','book-check-in')" autocomplete="off" readonly="readonly">
+										</span>
+									</div>
+									<div class="form-item code-item fn-clear">
+										<label class="label title-promotional-code" for="js-promotional-code">促销代码</label>
+										<input id="js-promotional-code" class="input-text ipt-promotional-code" type="text">
+									</div>
+									<div class="form-item button-item fn-clear">
+										<a id="room-res-submit" class="button-without-text button-first-type button-order-search" href="javascript:;">
+											查询
+											<i class="button-left"></i>
+											<i class="button-right"></i>
+										</a>
+									</div>
+									<ul class="popup-trigger fn-clear">
+										<li>
+											<a id="js-check-order" rel="nofollow" href="#popup-check-order" title="查询/取消预订">查询/取消预订</a>
+										</li>
+										<li>
+											<a id="js-tel-booking" rel="nofollow" href="#popup-tel-booking" title="电话预订">电话预订</a>
+										</li>
+									</ul>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="book-index-item book-special-offers">
+					<div class="book-index-title book-special-offers-title">
+						<a id="toggle-offers" rel="nofollow" href="javascript:;" title="精选优惠">精选优惠</a>
+					</div>
+					<div id="book-special-offers-content" class="book-index-content book-special-offers-content" style="display: none;">
+						<div id="js-scroll-offer" class="scroll scroll-banner" style="">
+							<div class="scroll-list-wrap">
+								<ul class="scroll-list fn-clear" style="width: 750px; height: 0px; left: 0px; top: 0px;">
+									<li class="scroll-item fn-clear" style="">
+
+										<div class="detail-info">
+											<h4 title="烛光餐厅套餐推广">
+												<a href="dining_offer_2.html">
+													烛光餐厅套餐推广                                        </a>
+												</h4>
+												<p title="窗外秋风袭来，海湾壹品为您打造专属浪漫烛光餐厅，由五星级名厨亲自为您搭配的营养与美味均衡的套餐，让您在山海之间感受不一样的海湾壹品，体验非凡的饮食之旅。
+												">窗外秋风袭来，海湾壹品为您打造专属浪漫烛光餐厅，由五星级名厨亲自为您搭配的营养与美味均衡的套餐，让您在山海之间感受不一…</p>
+												<p>有效期：2014-09-01<span class="separated">至</span>2014-11-30</p>
+											</div>
+										</li>
+
+										<li class="scroll-item fn-clear list-scroll-add" style="">
+
+											<div class="detail-info">
+												<h4 title="烛光餐厅套餐推广">
+													<a href="dining_offer_2.html">
+														烛光餐厅套餐推广                                        </a>
+													</h4>
+													<p title="窗外秋风袭来，海湾壹品为您打造专属浪漫烛光餐厅，由五星级名厨亲自为您搭配的营养与美味均衡的套餐，让您在山海之间感受不一样的海湾壹品，体验非凡的饮食之旅。
+													">窗外秋风袭来，海湾壹品为您打造专属浪漫烛光餐厅，由五星级名厨亲自为您搭配的营养与美味均衡的套餐，让您在山海之间感受不一…</p>
+													<p>有效期：2014-09-01<span class="separated">至</span>2014-11-30</p>
+												</div>
+											</li>
+											<li class="scroll-item fn-clear" style="">
+
+												<div class="detail-info">
+													<h4 title="烛光餐厅套餐推广">
+														<a href="dining_offer_2.html">
+															烛光餐厅套餐推广                                        </a>
+														</h4>
+														<p title="窗外秋风袭来，海湾壹品为您打造专属浪漫烛光餐厅，由五星级名厨亲自为您搭配的营养与美味均衡的套餐，让您在山海之间感受不一样的海湾壹品，体验非凡的饮食之旅。
+														">窗外秋风袭来，海湾壹品为您打造专属浪漫烛光餐厅，由五星级名厨亲自为您搭配的营养与美味均衡的套餐，让您在山海之间感受不一…</p>
+														<p>有效期：2014-09-01<span class="separated">至</span>2014-11-30</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<a class="scroll-next" rel="nofollow" href="javascript:;">Next</a>
+										<a class="scroll-prev" rel="nofollow" href="javascript:;">Prev</a>
+									</div>
+								</div>
+							</div>
+			</div>
+		</div>
+		<div id="main" class="main fn-clear">
+			<div class="content">
+				<h2 class="content-title">欢迎道县万豪假日酒店</h2>
+				<h3 class="content-subtitle">山海之间 奢华之梦</h3>
+				<div class="entry fn-clear">
+					<div class="entry-text">
+						<p></p>
+						<p>
+							<span style="color:#333333;">道县万豪假日酒店位于道县最为繁华的商业地带，主楼楼高十四层，贵宾楼楼高十九层，背靠苍翠欲滴的将军山，面临碧波浩淼的南中国海，雅致的波浪型楼体设计，把酒店自然融入宁静安逸的港湾，犹如永州情侣路上香炉湾畔的璀璨明珠。同时，酒店紧靠商业娱乐购物中心，与拱北海关和九洲港码头近在咫尺，便利的水陆交通直抵永州机场、香港、澳门以及珠江三角洲各大城市，让永州海湾大酒店成为商务旅行和休闲度假的首选之地。</span>
+						</p>
+						<p></p>
+						<p class="button-more-text">
+							<a rel="nofollow" href="about_hotel.html">更多详情 >></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar">
+				<div class="contact-us">
+					<div class="contact-panel-container">
+						<p>
+							<strong>电话：</strong>
+							<span>(86 756) 0000 000 </span>
+						</p>
+						<p>
+							<strong>传真：</strong>
+							<span>(86 756) 0000 000</span>
+						</p>
+						<p>
+							<strong>邮件：</strong>
+							<span>
+								<a href="mailto:345471536@qq.com" title="点击发送邮件到这个地址" rel="nofollow">345471536@qq.com</a>
+							</span>
+						</p>
+						<p>
+							<strong>地址：</strong>
+							<span>中国湖南永州道县</span>
+						</p>
+						<p>
+							<a href="map.html">
+								<span>查看地图</span>
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="sider-bg-wrap hide"></div>
+		</div>
+		<div class="footer">
+			<div class="footer-nav">
+				<a href="site_map.html">网站地图</a>
+				|
+				<a href="contact_hotel.html">联系我们</a>
+				|
+				<a href="career.html">工作机会</a>
+				|
+				<a href="privacy.html">隐私条款</a>
+				|
+				<a href="usage_clause.html">使用条款</a>
+			</div>
+			<div class="site-info">
+				<div class="site-r">
+					<p class="copy-address">中国湖南永州道县</p>
+					<span> 电话： XXXX </span>
+					<span class="email">
+						电子邮件:
+						<a rel="nofollow" href="mailto:345471536@qq.com">345471536@qq.com</a>
+					</span>
+				</div>
+				<div class="site-l">
+					<span class="copy_right">版权所有：道县万豪假日酒店</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<div id="pop-login-content" class="floatblock popup-module common_window" style="display: none;">
+    <div class="popup-content">
+        <h3 class="popup-content-title">会员登录</h3>
+        <form id="pop-login-form1" action="/member/login/" method="post">
+            {% csrf_token %}
+             <fieldset>
+                <dl>
+                    <dd>
+                        <label class="pop-title" for="pop-login-account">用户名：</label>
+                        <input type="text" class="validate[empty] input input-text" id="pop-login-account" name="username">
+                        <span class="text-error-info text-error-pop-login-account" style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-login-password">密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-login-password" name="password">
+                        <span class="text-error-info text-error-pop-login-password" style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
+                    <dd class="pop-submit-application">
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-submit" id="login-submit-btn">登录<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-cancer" id="pop-login-cancer">取消<i class="button-left"></i><i class="button-right"></i></a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div id="pop-regist-content" class="floatblock popup-module common_window" style="display: none;">
+    <div class="popup-content">
+        <h3 class="popup-content-title">会员注册</h3>
+        <form id="pop-regist-form1" action="/member/regist/" method="post">
+            {% csrf_token %}
+             <fieldset>
+                <dl>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-account">*用户名：</label>
+                        <input type="text" class="validate[empty] input input-text" id="pop-regist-username" name="username">
+                        <span class="text-error-info text-error-pop-regist-account" style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">*密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-regist-password" name="password">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
+                     <dd>
+                        <label class="pop-title" for="pop-regist-password">*重复密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-regist-repeat-password">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">再次输入密码!</span> </dd>
+                     <dd>
+                        <label class="pop-title" for="pop-regist-password">*手机：</label>
+                        <input type="text"  class="input input-text" id="pop-phone" name="phone">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入10-20位手机</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">*真实姓名：</label>
+                        <input type="text"  class="input input-text" id="pop-realname" name="realname">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入真实姓名</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">QQ：</label>
+                        <input type="text"  class="input input-text" id="pop-qq" name="qq">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入5-15位数字QQ号码</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">Email：</label>
+                        <input type="text"  class="input input-text" id="pop-email" name="email">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入正确Email地址</span> </dd>
+                    <dd class="pop-submit-application">
+                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-submit" id="regist-submit-btn">注册<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-cancer" id="pop-regist-cancer">取消<i class="button-left"></i><i class="button-right"></i></a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+	require(["jquery","functions","form"], function($) {
+		$(function() {
+            window.functions=functions;
+            functions.base.load_anchor();
+            functions.base.set_all_aclick();
+            $('#show-login-btn').click(function(){
+                //alert("展示登录框");
+                $("#pop-login-content").css({
+                        'top': 100,
+                        'left': 500,
+                    });
+                 $("#pop-login-content").show();
+               });
+             function show_loginon_label(username,backend){
+                    $("#pop-login-content").hide();
+                    $("#member-entrance").html("<label><a href='javascript:functions.base.load_page(\"/member/user_center\");'>"+username+"</label>");
+                    if (backend){
+                        $("#member-entrance").append("|<label><a href='/admin'>后台主页</a></label>");
+                    }
+                    $("#member-entrance").append("|<label><a href='/member/logout'>注销</a></label>");
+             }
+             if ($("#show-login-btn").data("logined")){
+                show_loginon_label("{{request.user.username}}",$("#show-login-btn").data("superuser"));
+              }
+             $('#login-submit-btn').click(function(){
+                    $("#pop-login-form1").ajaxForm({
+                        data : {},
+                        dataType : "json",
+                        success: function(data) {
+                            show_loginon_label(data.username,data.backend);
+                        }
+                    }).submit();
+             });
+             
+             $('#show-regist-btn').click(function(){
+                //alert("展示注册框");
+                $("#pop-regist-content").css({
+                        'top': 100,
+                        'left': 500,
+                    });
+                 $("#pop-regist-content").show();
+               });
+               
+              $('#regist-submit-btn').click(function(){
+                    if ($("#pop-regist-repeat-password").val()!=$("#pop-regist-password").val()){
+                        alert("两次输入的密码必须一致！")
+                    }
+                    $("#pop-regist-form1").ajaxForm({
+                        data : {},
+                        dataType : "json",
+                        success: function(data) {
+                            alert("注册成功");
+                            //show_loginon_label(data.username,data.backend);
+                        }
+                    }).submit();
+             });
+		  });
+	});
+</script>
+</body>
+</html>

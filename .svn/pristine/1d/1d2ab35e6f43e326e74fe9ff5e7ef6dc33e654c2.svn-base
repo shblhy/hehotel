@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/static/base/css/style.css" media="all">
+    <script type="text/javascript" src="/static/base/js/require-config.js"></script>
+    <script type="text/javascript" src="/static/base/com/require-jquery1.9-migrate1.1.js"></script>
+        
+	<title>道县万豪假日酒店官方网站|最低房价保证，更多优惠服务</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="道县万豪假日酒店，道县酒店，道县五星级酒店，道县5星级酒店，道县靠海酒店，道县度假酒店，道县酒店预订，道县酒店预定，道县商务酒店" name="keywords">
+	<meta content="道县万豪假日酒店官方网站预订，价格最优，更多优惠。道县万豪假日酒店屹立于道县最为繁华的商业地带，是商务旅行和休闲度假的首选之地。" name="description">
+</head>
+<body class="inside-page">
+<div class="header">
+    <ul  class="horizontal_menu lgray slide" id="horizontal_menu">
+        <li><a href="/">前台主页</a></li>
+        <li><a href="javascript:void(0)" data-href="/room/room_types">房型管理</a></li>
+        <li><a href="javascript:void(0)" data-href="/room/rooms">房间管理</a></li>
+        <li><a href="javascript:void(0)" data-href="/member/users">用户管理</a></li>
+        <li><a href="javascript:void(0)" data-href="/order/orders">订单管理</a></li>
+        <li><a href="javascript:void(0)" data-href="/article/articles">文章管理</a></li>
+    </ul>
+</div>
+<br/>
+<div id="main" class="main">
+    网站共有注册会员{{user_cnt.all}}个。<br/>
+    旅店共有房间{{room_cnt.all}}间，目前空闲的有{{room_cnt.empty}}间，预定中的有{{room_cnt.order}}间。<br/>
+    目前总共成交记录{{order_cnt.pay}}条。
+</div>
+<script type="text/javascript">
+    require(["jquery","functions"], function($) {
+        $(function() {
+            functions.base.set_all_aclick();
+            functions.base.load_anchor();    
+            //window.require = require;        
+        });
+    });
+</script>
+</body>
+</html>

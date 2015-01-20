@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link media="all" href="/static/ref/css/dossm-base-min.css" rel="stylesheet">
+    <link media="screen" href="/static/ref/css/dossm-global.css" rel="stylesheet">
+    <link media="screen" href="/static/ref/css/jquery-fancybox.css" rel="stylesheet">
+    <link media="screen" href="/static/ref/css/dossm-home.css" rel="stylesheet">
+    <link media="screen" href="/static/ref/css/dossm-zh-cn.css" rel="stylesheet">
+    <link media="screen" href="/static/ref/css/dossm-zh-cn.css"rel="stylesheet">
+    <link media="screen" href="/static/base/css/style_.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/base/js/require-config.js"></script>
+    <script type="text/javascript" src="/static/base/com/require-jquery1.9-migrate1.1.js"></script>
+    <title>道县万豪假日酒店官方网站|最低房价保证，更多优惠服务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="道县万豪假日酒店，道县酒店，道县五星级酒店，道县5星级酒店，道县靠海酒店，道县度假酒店，道县酒店预订，道县酒店预定，道县商务酒店" name="keywords">
+    <meta content="道县万豪假日酒店官方网站预订，价格最优，更多优惠。道县万豪假日酒店屹立于道县最为繁华的商业地带，是商务旅行和休闲度假的首选之地。" name="description">
+</head>
+<body class="home-page">
+<div id="pop-login-content" class="floatblock popup-module common_window">
+    <div class="popup-content">
+        <h3 class="popup-content-title">会员登录</h3>
+        <form id="pop-login-form1" action="/member/login/" method="post">
+            {% csrf_token %}
+             <fieldset>
+                <dl>
+                    <dd>
+                        <label class="pop-title" for="pop-login-account">用户名：</label>
+                        <input type="text" class="validate[empty] input input-text" id="pop-login-account" name="username">
+                        <span class="text-error-info text-error-pop-login-account" style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-login-password">密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-login-password" name="password">
+                        <span class="text-error-info text-error-pop-login-password" style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
+                    <dd class="pop-submit-application">
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-submit" id="login-submit-btn">登录<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-cancer" id="pop-login-cancer">取消<i class="button-left"></i><i class="button-right"></i></a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    require(["jquery","functions","form"], function($) {
+             $('#login-submit-btn').click(function(){
+                    $("#pop-login-form1").ajaxForm({
+                        data : {},
+                        dataType : "json",
+                        success: function(data) {
+                            windows.location = '/#/member/user_center';
+                            //show_loginon_label(data.username,data.backend);
+                        }
+                    }).submit();
+             });
+    });
+</script>
+             
+             
+</body>
+

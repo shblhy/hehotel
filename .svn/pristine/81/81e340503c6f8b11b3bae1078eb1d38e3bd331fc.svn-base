@@ -1,0 +1,402 @@
+<div class="content single-content fn-clear">
+	<div class="single-high-light"></div>
+	<div class="room-res-step-wrapper">
+		<div class="res-nav fn-clear">
+			<div class="res-nav-container" id="res-nav-container"><ul class="res-step-nav fn-clear room-res-step-nav">     <li class="res-step-item res-step-item-1 res-step-nav-current">         <div class="res-step-text">             <i class="step-num">1</i>             <p>选择</p>             <p>日期</p>         </div>     </li>     <li class="res-step-item res-step-item-2">         <div class="res-step-text">             <i class="step-num">2</i>             <p>选择</p>             <p>房型及价格</p>         </div>     </li>     <li class="res-step-item res-step-item-3">         <div class="res-step-text">             <i class="step-num">3</i>             <p>选择</p>             <p>增值服务</p>         </div>     </li>     <li class="res-step-item res-step-item-4">         <div class="res-step-text">             <i class="step-num">4</i>             <p>选择</p>             <p>客人资料及审阅</p>         </div>     </li>     <li class="res-step-item res-step-item-5 last-item">         <div class="res-step-text">             <i class="step-num">5</i>             <p>担保/支付</p>             <p>及完成预订</p>         </div>     </li> </ul></div>
+			<a style="display:none;" href="javascript:;" class="booking-summary" id="booking-summary">预订概要</a>
+			<h2 class="res-title res-room-title">客房预订</h2>
+			<div style="dislay:none;" class="choose-other-hotel-wrapper" id="choose-other-hotel-wrap"></div>
+			<div style="display:none;" class="current-hotel-name" id="current-hotel-name"></div>
+		</div><!-- / .res-nav -->
+		<div class="res-container">
+			<div class="room-res-step" id="room-res-step-1">
+				<div class="res-header fn-clear room-res-first-header">
+					<div class="first-row-header fn-left">
+						<strong class="title-choose-hotel"></strong>
+					</div>
+					<div class="second-row-header fn-left">
+						<strong class="title-choose-date">选择停留日期</strong>
+					</div>
+				</div><!-- / .res-header -->
+				<div class="res-body fn-clear">
+					<div class="res-sidebar room-res-first-sidebar fn-left">
+						<ul class="room-hotel-list" id="js-room-hotel-list"><li>         <a rel="nofollow" title="珠海海湾" href="javascript:;">珠海海湾</a>     </li></ul>
+						<div class="tel-res">
+							<h4 class="tel-res-title">电话预订</h4>
+							<p class="tel-res-num">(86 756) 8877 998</p>
+							<ul class="tel-res-list">
+								<li>
+									<a id="js-price-guarantee" href="#popup-price-guarantee">最优惠价格保证!</a>
+								</li>
+								<li>
+									<a id="js-check-order" href="#popup-check-order">查询/取消预订</a>
+								</li>
+								<li>
+									<a id="js-online-consultation" href="#popup-online-consultation">在线留言</a>
+								</li>
+							</ul>
+						</div>
+					</div><!-- / .res-sidebar -->
+					<div class="res-content room-res-first-content fn-left">
+						<form class="form" action="#">
+							<fieldset>
+								<legend>客房预订第一步</legend>
+								<div style="display:none;" class="reservation-product" id="js-product">预订房间：<span></span></div>
+								<div style="display:none;" class="reservation-plan" id="js-plan"></div>
+								<div class="res-check-module fn-clear">
+									<div class="room-res-check-info">
+										<div class="res-login" id="members-ship"><p>         <strong>当前客人：</strong>         <span class="level">个人散客</span>     </p>              <p class="login-line">             如果您已经注册会员，请先<a class="member-login button-without-text button-first-type button-res-login" href="#pop-login">登录<i class="button-left"></i><i class="button-right"></i></a>         </p></div>
+										<h5 class="check-info-title">停留日期</h5>
+										<dl class="check-info-list" style="display: none;">
+											<dt>入住日期</dt>
+											<dd id="dd-check-in"></dd>
+										</dl>
+										<dl class="check-info-list" style="display: none;">
+											<dt>退房日期</dt>
+											<dd id="dd-check-out"></dd>
+										</dl>
+										<dl class="check-info-list" style="display: none;">
+											<dt>入住晚数</dt>
+											<dd><span id="dd-nights">0</span> 晚</dd>
+										</dl>
+									</div><!-- / .room-res-check-info -->
+									<div class="room-res-data">
+										<div class="room-res-select-data fn-clear">
+											<div class="room-res-check-in" style="position: relative; z-index: 20;">
+												<label for="">选择年/月<span class="form-required">*</span></label>
+												<select name="" class="select the-first-select select-year-month" id="select-year-month" style="display: none;"><option value="2014/11">2014年11月</option><option value="2014/12">2014年12月</option><option value="2015/1">2015年1月</option><option value="2015/2">2015年2月</option><option value="2015/3">2015年3月</option><option value="2015/4">2015年4月</option><option value="2015/5">2015年5月</option><option value="2015/6">2015年6月</option><option value="2015/7">2015年7月</option><option value="2015/8">2015年8月</option></select><div class="select the-first-select select-year-month"><div class="select-title"><span class="select-title-text">2014年11月</span><i class="select-icon-arrow"></i></div><div class="select-list-container"><ul class="select-list fn-clear"><li title="2014年11月" key="2014/11" class="select-list-item-current">2014年11月</li><li title="2014年12月" key="2014/12">2014年12月</li><li title="2015年1月" key="2015/1">2015年1月</li><li title="2015年2月" key="2015/2">2015年2月</li><li title="2015年3月" key="2015/3">2015年3月</li><li title="2015年4月" key="2015/4">2015年4月</li><li title="2015年5月" key="2015/5">2015年5月</li><li title="2015年6月" key="2015/6">2015年6月</li><li title="2015年7月" key="2015/7">2015年7月</li><li title="2015年8月" key="2015/8" class="select-list-last-item">2015年8月</li></ul></div></div>
+												<input type="hidden" id="star-date" value="">
+												<input type="hidden" id="end-date" value="">
+											</div><!-- / .room-res-check-in -->
+										</div><!-- / .room-res-check-data -->
+										<div id="js-first-step-calendar" class="calendar-module fn-clear">
+											<div class="calendar-item">
+												<table class="cal-draw-tb" id="cal-tb1">
+													<caption>
+														<div>
+															<a class="cal-icon cal-icon-prev" href="javascript:;"></a>
+															<span class="cal-caption-con">2014年11月</span>
+														</div>
+													</caption>
+													<tbody>
+														<tr>
+															<td>
+																<table class="cal-tb-content">
+																	<thead>
+																		<tr>
+																			<th class="sun">日</th>
+																			<th class="mon">一</th>
+																			<th class="tue">二</th>
+																			<th class="wed">三</th>
+																			<th class="thu">四</th>
+																			<th class="fri">五</th>
+																			<th class="sat">六</th>
+																		</tr>
+																	</thead>
+																	<tbody id="cal-tb1-content"><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td class="old"><span>1</span></td></tr><tr><td class="old"><span>2</span></td><td class="old"><span>3</span></td><td class="old"><span>4</span></td><td class="old"><span>5</span></td><td class="old"><span>6</span></td><td class="old"><span>7</span></td><td class="old"><span>8</span></td></tr><tr><td class="old"><span>9</span></td><td class="old"><span>10</span></td><td class="old"><span>11</span></td><td class="old"><span>12</span></td><td class="old"><span>13</span></td><td class="old"><span>14</span></td><td class="old"><span>15</span></td></tr><tr><td class="old"><span>16</span></td><td class="cal-able"><a href="javascript:;">17</a></td><td class="cal-able"><a href="javascript:;">18</a></td><td class="cal-able"><a href="javascript:;">19</a></td><td class="cal-able"><a href="javascript:;">20</a></td><td class="cal-able"><a href="javascript:;">21</a></td><td class="cal-able"><a href="javascript:;">22</a></td></tr><tr><td class="cal-able"><a href="javascript:;">23</a></td><td class="cal-able"><a href="javascript:;">24</a></td><td class="cal-able"><a href="javascript:;">25</a></td><td class="cal-able"><a href="javascript:;">26</a></td><td class="cal-able"><a href="javascript:;">27</a></td><td class="cal-able"><a href="javascript:;">28</a></td><td class="cal-able"><a href="javascript:;">29</a></td></tr><tr><td class="cal-able"><a href="javascript:;">30</a></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody>
+																</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="calendar-item calendar-last-item">
+												<table class="cal-draw-tb" id="cal-tb2">
+													<caption>
+														<div>
+															<a class="cal-icon cal-icon-next" href="javascript:;"></a>
+															<span class="cal-caption-con">2014年12月</span>
+														</div>
+													</caption>
+													<tbody>
+														<tr>
+															<td>
+																<table class="cal-tb-content">
+																	<thead>
+																		<tr>
+																			<th class="sun">日</th>
+																			<th class="mon">一</th>
+																			<th class="tue">二</th>
+																			<th class="wed">三</th>
+																			<th class="thu">四</th>
+																			<th class="fri">五</th>
+																			<th class="sat">六</th>
+																		</tr>
+																	</thead>
+																	<tbody id="cal-tb2-content"><tr><td>&nbsp;</td><td class="cal-able"><a href="javascript:;">1</a></td><td class="cal-able"><a href="javascript:;">2</a></td><td class="cal-able"><a href="javascript:;">3</a></td><td class="cal-able"><a href="javascript:;">4</a></td><td class="cal-able"><a href="javascript:;">5</a></td><td class="cal-able"><a href="javascript:;">6</a></td></tr><tr><td class="cal-able"><a href="javascript:;">7</a></td><td class="cal-able"><a href="javascript:;">8</a></td><td class="cal-able"><a href="javascript:;">9</a></td><td class="cal-able"><a href="javascript:;">10</a></td><td class="cal-able"><a href="javascript:;">11</a></td><td class="cal-able"><a href="javascript:;">12</a></td><td class="cal-able"><a href="javascript:;">13</a></td></tr><tr><td class="cal-able"><a href="javascript:;">14</a></td><td class="cal-able"><a href="javascript:;">15</a></td><td class="cal-able"><a href="javascript:;">16</a></td><td class="cal-able"><a href="javascript:;">17</a></td><td class="cal-able"><a href="javascript:;">18</a></td><td class="cal-able"><a href="javascript:;">19</a></td><td class="cal-able"><a href="javascript:;">20</a></td></tr><tr><td class="cal-able"><a href="javascript:;">21</a></td><td class="cal-able"><a href="javascript:;">22</a></td><td class="cal-able"><a href="javascript:;">23</a></td><td class="cal-able"><a href="javascript:;">24</a></td><td class="cal-able"><a href="javascript:;">25</a></td><td class="cal-able"><a href="javascript:;">26</a></td><td class="cal-able"><a href="javascript:;">27</a></td></tr><tr><td class="cal-able"><a href="javascript:;">28</a></td><td class="cal-able"><a href="javascript:;">29</a></td><td class="cal-able"><a href="javascript:;">30</a></td><td class="cal-able"><a href="javascript:;">31</a></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody>
+																</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="room-res-clear-data fn-clear">
+											<span class="selectable-date"><i class="selectable-icon"></i>可选择日期</span>
+											<span class="selected-date"><i class="selected-icon"></i>已选择日期</span>
+											<a class="button-without-text button-first-type button-clear-data" id="button-clear-data" rel="nofollow" href="javascript:;">清除所选日期<i class="button-left"></i><i class="button-right"></i></a>
+										</div><!-- / .room-res-check-data -->
+									</div><!-- / .room-res-data -->
+								</div><!-- / .res-check-module -->
+								<div class="res-info fn-clear" id="room-infos">
+									<h4 class="res-info-title">客房及客人信息</h4>
+									<dl class="res-info-list">
+										<dt>
+											<label for="choose-room-num">客房数量<span class="form-required">*</span></label>
+										</dt>
+										<dd style="position: relative; z-index: 20;">
+											<select class="select the-first-select choose-room-num" id="choose-room-num" name="choose-room-num" style="display: none;">
+												<script type="text/javascript">
+													for (var i = 1; i &lt;= selectRoomNum; i++) {
+														document.write('&lt;option value="' + i + '"&gt;' + i + '&lt;/option&gt;');
+													}
+												</script><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+											</select><div class="select the-first-select choose-room-num"><div class="select-title"><span class="select-title-text">1</span><i class="select-icon-arrow"></i></div><div class="select-list-container"><ul class="select-list fn-clear"><li title="1" key="1" class="select-list-item-current">1</li><li title="2" key="2">2</li><li title="3" key="3">3</li><li title="4" key="4">4</li><li title="5" key="5" class="select-list-last-item">5</li></ul></div></div>
+										</dd>                                        
+									</dl>
+									<dl style="display:none;" class="res-info-list">
+										<dt>
+											<label for="choose-room-type">床型</label>
+										</dt>
+										<dd>
+											<select class="select the-first-select choose-room-type" id="choose-room-type" name="choose-room-type">
+												<option value="">请选择</option>
+												<option value="2">大床</option><option value="7">双床</option>                                            </select>
+											</dd>
+										</dl>
+										<dl class="res-info-list">
+											<dt>
+												<label for="promotional-code" class="promotional-code-item">促销或协议代码</label>
+											</dt>
+											<dd>
+												<input type="text" class="input input-text input-promotion-code" id="promotional-code">
+											</dd>
+										</dl>
+									</div>
+								</fieldset>
+							</form>
+						</div><!-- / .res-content -->
+					</div><!-- / .res-body -->
+				</div><!-- / #room-res-step-1 -->
+				<div style="display:none;" class="room-res-step" id="room-res-step-2">
+					<div class="res-header fn-clear room-res-second-header">
+						<div class="first-row-header fn-left">
+							<span class="title-price fn-right"><strong class="header-title">价格</strong>(人民币)</span>
+							<strong class="title-choose-price">选择价格</strong>
+						</div>
+						<div class="second-row-header fn-left">
+							<span class="title-price-pre-night fn-right">
+								<strong>平均每晚价格</strong>
+								(人民币)
+							</span>
+							<strong class="title-choose-room">选择房型</strong>
+						</div>
+						<div class="third-row-header fn-left">
+							<strong class="title-price-details">价格详情</strong>
+						</div>
+					</div><!-- / .res-header -->
+					<div class="res-body fn-clear">
+						<div class="res-content room-res-second-content fn-clear">
+							<form class="form" action="#">
+								<fieldset>
+									<legend>客房预订第二步</legend>
+									<div class="first-row-content fn-left" id="first-row-content-step2"></div>
+									<div class="second-row-content fn-left" id="second-row-content-step2"></div>
+									<div class="third-row-content fn-right" id="third-row-content-step2"></div>
+									<div id="step2-load"></div>
+								</fieldset>
+							</form>
+						</div><!-- / .res-content -->
+					</div><!-- / .res-body -->
+				</div><!-- / #room-res-step-2 -->
+				<div style="display:none" class="room-res-step" id="room-res-step-3">
+					<div class="res-header fn-clear room-res-third-header">
+						<strong>个性化选项</strong>，欲略过按「下一步」                </div><!-- / .res-header -->
+						<div class="res-body fn-clear">
+							<div class="res-content room-res-third-content fn-clear">
+								<form class="form" action="#">
+									<fieldset>
+										<legend>选择增值服务</legend>
+										<div class="first-row-content fn-left" id="first-row-content-step3"></div>
+										<div class="second-row-content fn-left" id="second-row-content-step3"></div>
+										<div class="third-row-content fn-left" id="third-row-content-step3">
+											<h3 class="third-row-content-title" id="js-third-row-title">
+												<strong>增值服务说明</strong>
+											</h3>
+											<div class="other-service-detail" id="other-service-detail"></div>
+											<div class="other-service-choose" id="js-service-choose"></div>
+										</div><!-- / .third-row-content -->
+									</fieldset>
+								</form>
+							</div><!-- / .res-content -->
+						</div><!-- / .res-body -->
+					</div><!-- / #room-res-step-3 -->
+					<div style="display:none;" class="room-res-step" id="room-res-step-4">
+						<div class="fn-clear room-res-fourth-header">
+							<div class="res-member-login" id="res-member-login">
+								<a class="member-login button-res-login-entry fn-right" href="#pop-login">登录[我的会员中心]</a>
+								<p><span class="form-required">*</span> 如果您己经建立了预订资料，请点击</p>
+							</div>
+							<div class="step-tips">
+								<h3 class="step-tips-title fn-left">请输入以下资料</h3>
+								<span class="required-tips"><span class="form-required">*</span> 必需填写</span>
+							</div>
+						</div><!-- / .res-header -->
+						<div class="res-body fn-clear">
+							<div class="res-content room-res-fourth-content fn-clear">
+								<form class="form" id="validateForm">
+									<fieldset>
+										<legend>选择客人资料及审阅</legend>
+										<div class="first-row-content fn-left">
+											<div class="tab res-info-tab first-row-content">
+												<div class="tab-trigger">
+													<ul>
+														<li class="tab-trigger-current">住客信息</li>
+														<li>联系人信息</li>
+														<li>抵达信息</li>
+													</ul>
+												</div>
+												<div class="tab-container">
+													<div class="tab-container-item guest-info-item tab-container-item-current" id="guest-info-item" style="display: block;"></div>
+													<div class="tab-container-item contact-info-item" style="display: none;">
+														<div class="fill-contact-info">
+															<div class="form-item guest-select">
+																<label class="item-title" for="">入住人为联系人：</label>
+																<span class="contact-group">
+																	<label class="yes-contact" for="yes-contact">
+																		<input type="radio" value="1" name="contact-group" id="yes-contact" onclick="RoomReservat.radioContact(true)">
+																		是                                                            </label>
+																		<label name="contact-group" class="no-contact" for="no-contact">
+																			<input type="radio" checked="checked" value="0" name="contact-group" id="no-contact" onclick="RoomReservat.radioContact(false)">
+																			否                                                            </label>
+																		</span>
+																		<select class="select the-first-select c-choose-common-name" id="c-choose-common-name" style="display:none;">
+																			<option value="-1">请选择</option>
+																		</select>
+																	</div>
+																	<div id="contact-info-item"></div>
+																</div><!-- / .fill-contact-info -->
+																<div class="promotion-module" id="js-promotion-module">
+																	<label for="js-recieve-info" class="promotion-title">本人愿意接收酒店推广邮件</label>
+																	<input type="checkbox" id="js-recieve-info">
+																</div><!-- / .promotion-module -->
+																<div class="c-register" id="c-register">
+																	<h3 class="c-register-title">在「会员中心」建立您的个人资料</h3>
+																	<p class="c-register-text">在「会员中心」建立您的个人资料，您只需要输入密码便可建立「会员中心」个人资料，随时编辑个人资料，审阅预订详情及透过在线联系进行预订，方便快捷。</p>
+																	<h3 class="c-register-title">注册成为会员</h3>
+																	<div class="form-item">
+																		<label for="c-reg-email">电邮：</label>
+																		<input type="text" class="input-text c-reg-email" id="c-reg-email">
+																		<div id="reg-user-empty-error" class="regist-validate-error">
+																			请输入用户名！                                                        </div>
+																			<div id="reg-user-format-error" class="regist-validate-error">
+																				请按邮件格式输入用户名！                                                        </div>
+																				<div id="reg-user-repeat-error" class="regist-validate-error">
+																					该用户名已经存在，请换个登录名！                                                        </div>
+																					<div id="reg-user-validate-ok" class="regist-validate-ok">
+																						恭喜您，该用户名可以使用。                                                        </div>
+																					</div>
+																					<div class="form-item">
+																						<label for="c-reg-password">密码：</label>
+																						<input type="password" class="input-text c-reg-password" id="c-reg-password">
+																						<a class="c-button-reg" href="#" id="c-register-submit">建立个人资料</a>
+																						<div id="reg-password-empty-error" class="regist-validate-error">请输入密码！</div>
+																						<p class="tips">(最少六个字符)</p>
+																					</div>
+																				</div>
+																			</div><!-- / .contact-information-item -->
+																			<div class="tab-container-item arrival-info-item" style="display: none;">
+																				<div class="transport-info">
+																					<p class="transport-choose-item">
+																						<label class="transport-aircraft" for="transport-aircraft">
+																							<input type="radio" name="transport-group" id="transport-aircraft" onclick="RoomReservat.airRadioCheck(this, true)" value="飞机">
+																							乘搭飞机抵达                                                        </label>
+																							<a style="display:none;" class="button-clear" onclick="RoomReservat.clearAirRadio(this, false)" value="" href="javascript:;">清除</a>
+																						</p>
+																						<p class="transport-choose-item">
+																							<label class="transport-others" for="transport-others">
+																								<input type="radio" value="" name="transport-group" id="transport-others" onclick="RoomReservat.airRadioCheck(this, false)">
+																								乘搭其它交通工具抵达                                                        </label>
+																								<a style="display:none;" class="button-clear" onclick="RoomReservat.clearAirRadio(this)" href="javascript:;">清除</a>
+																							</p>
+																							<div class="aircraft-info" id="aircraft-info"></div>
+																						</div><!-- / .transport-info -->
+																						<div class="requirements-info">
+																							<h3 class="requirements-info-title">入住要求</h3>
+																							<div class="requirements-info-item first-item" id="requirements-info-item"></div>
+																							<div class="requirements-info-item second-item">
+																								<p>酒店标准登记入住时间：14:00</p>
+																								<p>酒店标准办理退房时间：12:00</p>
+																							</div>
+																						</div><!-- / .requirements-info -->
+																					</div><!-- / .arrival-information -->
+																				</div>
+																			</div>
+																		</div><!-- / .first-row-content -->
+																		<div class="second-row-content fn-left">
+																			<h3 class="special-title">特殊需求</h3>
+																			<div class="special-module">
+																				<div id="special-module"></div>
+																				<label class="other-special-title">
+																					<strong>其它需求</strong>
+																					(140字符)
+																				</label>
+																				<textarea cols="30" rows="10" name="" class="textarea other-special-text" id="other-special-text"></textarea>
+																				<p class="entry-tips">请在空白处输入您在住宿期间的特殊要求。请使用英语或中文。并非您的所有特殊要求在登记入住时都得到保证，但我们会尽力满足您的要求。</p>
+																			</div><!-- / .special-module -->
+																		</div><!-- / .second-row-content -->
+																	</fieldset>
+																</form>
+															</div><!-- / .res-content -->
+														</div><!-- / .res-body -->
+													</div><!-- / #room-res-step-4 -->
+													<div style="display:none;" class="room-res-step" id="room-res-step-4-review">
+														<div class="fn-clear room-res-fourth-header">
+															<div class="step-tips">
+																<h3 class="step-tips-title fn-left">审阅预订</h3>
+															</div>
+														</div><!-- / .res-header -->
+														<div class="res-body fn-clear">
+															<div class="res-content room-res-fourth-content fn-clear">
+																<div class="first-row-content fn-left">
+																	<h3 class="order-review-title">预订信息及费用详细</h3>
+																	<div class="room-res-review">
+																		<div id="room-res-review-item"></div>
+																		<div class="value-added-review" id="value-added-review"></div>
+																		<div class="total-review" id="total-review"></div>
+																	</div><!-- / .room-res-review -->
+																</div><!-- / .first-row-content -->
+																<div class="second-row-content fn-left">
+																	<div class="guest-info-review" id="guest-info-review"></div>
+																	<div class="arrival-info-review" id="arrival-info-review"></div>
+																	<div class="special-review" id="special-review"></div>
+																	<div class="contact-info-review" id="contact-info-review"></div>
+																</div><!-- / .second-row-content -->
+															</div><!-- / .res-content -->
+														</div><!-- / .res-body -->
+													</div><!-- / #room-res-step-4-review -->
+													<div style="display:none;" class="room-res-step" id="room-res-step-5">
+														<div class="res-header fn-clear room-res-fifth-header">
+															<div class="step-tips">
+																<h3 class="step-tips-title fn-left">担保/在线支付</h3>
+															</div>
+														</div><!-- / .res-header -->
+														<div class="res-body fn-clear">
+															<div class="res-content room-res-fifth-content fn-clear">
+																<div class="first-row-content fn-left">
+																	<div class="room-total">
+																		<div class="total-review" id="step5-total-review"></div>
+																		<p class="review-more" id="step5-review-more"></p>
+																		<div id="step5-payment"></div>
+																	</div><!-- / .room-total -->
+																</div><!-- / .first-row-content -->
+																<div class="second-row-content fn-left">
+																	<dl class="room-res-notice" id="step5-order-policy"></dl>
+																</div><!-- / .second-row-content -->
+															</div><!-- / .res-content -->
+														</div><!-- / .res-body -->
+													</div><!-- / #room-res-5 -->
+													<div class="res-footer fn-clear" id="res-footer"><a class="button-without-text button-first-type button-res-next fn-right" id="step1Next" href="javascript:;">             下一步<i class="button-left"></i><i class="button-right"></i>         </a></div>
+												</div><!-- / .res-container -->
+											</div><!-- / .room-res-step-wrapper -->
+										</div>

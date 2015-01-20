@@ -1,0 +1,63 @@
+body {
+	background-color: #FCFCFC;
+}
+/*.header {
+	height: 34px;
+	background: url(../images/page/header.gif) repeat-x left top;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	_position: absolute;
+}*/
+.logo {
+	width: 300px;
+	height: 32px;
+	position: absolute;
+	top: 0;
+	display: block;
+	left: 0;
+}
+
+.main .content {
+    float: right;
+    padding: 25px 22px;
+    width: 630px;
+}
+
+.main .sidebar {
+  background: url("/static/ref/images/home-sider-content-bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  float: left;
+  height: 210px;
+  margin: 35px 0px 33px 0;
+  overflow: hidden;
+  width: 254px;
+}
+.sidebar {
+  border-top: 10px solid #ddcfac;
+  float: left;
+  padding: 0 10px;
+  position: relative;
+  width: 240px;
+  z-index: 1;
+}
+.without-slideshow .main {
+    background: none repeat scroll 0 0 #fff;
+    border-top: 10px solid #ddcfac;
+}
+
+.floatblock{
+	left:0;
+	position: absolute;
+	top:0;
+	z-index: 995;
+	display: block;
+	height: auto;
+	background-color:#223D4D;
+} 
+.common_window{
+	height:282px;
+	/*overflow:auto;*/
+	width:360px;
+	background-color: #fff;
+}

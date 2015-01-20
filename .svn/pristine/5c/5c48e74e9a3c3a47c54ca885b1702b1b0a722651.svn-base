@@ -1,0 +1,73 @@
+#-*- coding:utf-8 -*-
+
+from django.shortcuts import render_to_response,get_object_or_404
+from django.http import HttpResponseBadRequest,HttpResponse
+#from django.contrib.auth.decorators import login_required
+from order.table import OrderTable
+from order.form import OrderForm,OrderQForm
+from order.models import Order
+from room.models import Room,RoomType
+from com.mylib.response import HttpJsonResponse
+from member.models import User
+
+def orders(request):
+    form = OrderQForm(request.GET)
+    if not form.is_valid():
+        return HttpResponseBadRequest(form.errors.as_text())
+    condition = form.get_condition()
+    q = Order.objects.filter(**condition)
+    table = OrderTable(
+         query=q,
+         limit=form.cleaned_data['iDisplayLength'],
+         offset=form.cleaned_data['iDisplayStart'],
+         order_by=form.cleaned_data['orderBy']
+    )
+    return render_to_response('order/orders.html',locals())
+
+def order_input(request,room_id=None,order_id=None,action='add'):
+    if room_id:
+        room = get_object_or_404(Room,pk=room_id)
+    if order_id:
+        order = get_object_or_404(Order,pk=order_id)
+    else:
+        order = Order()
+    order.room
+    return render_to_response('order/order_input.html',locals())
+
+def order_do(request,room_type_id):
+    room_type = get_object_or_404(RoomType,pk=room_type_id)
+    return render_to_response('order/order_do.html',locals())
+
+def do_order(request):
+    form = OrderForm(request.POST)
+    if form.is_valid():
+        '''
+        if not form.cleaned_data['member']:
+            user = User()
+            user.username =  form.cleaned_data['phone']
+            user.real_name =  form.cleaned_data['customer']
+            order = form.instance
+            order.set_room()
+            order.save()
+            user.password = order.id
+            user.save()
+            order.member = user
+            order.save()
+            regist_now = True
+        else:
+        '''
+        order = form.instance
+        order.set_room()
+        order.member = request.user
+        order.save()
+        order.set_sn()
+        user = order.member
+        regist_now = False
+        order.room.status = 1
+        order.room.save()
+        return HttpJsonResponse({'username':user.real_name,'order_id':order.sn,'regist_now':regist_now})
+    return HttpResponseBadRequest(form.errors_as_text())
+
+def order_detail(request,order_id=None):
+    order = get_object_or_404(Order,pk=order_id)
+    return render_to_response('order/order_detail.html',locals())

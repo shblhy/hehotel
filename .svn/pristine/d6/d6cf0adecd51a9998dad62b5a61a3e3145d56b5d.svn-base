@@ -1,0 +1,12 @@
+<!--扩展的房间列表，为了提供给用户友好的展示风格-->
+<ul>
+    {%for rtype in room_types%}
+    <li>
+        名称：{{rtype.name}}
+        介绍：{{rtype.comment}}
+        价格：{{rtype.price}}
+        照片：<img src="{{rtype.full_photo_path}}" alt="尚未上传">
+        <a href="javascript:void(0)" data-href="/order/order">预订</a>
+    </li>
+    {%endfor%}
+</ul>

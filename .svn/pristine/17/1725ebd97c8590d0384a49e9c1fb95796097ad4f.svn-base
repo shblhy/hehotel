@@ -1,0 +1,65 @@
+@charset "utf-8";
+/*!
+ * Dossm Single zh-cn v1.0
+ * Copyright 2012 Wintour, Inc.
+ * Author : sam.zeng@wintour.cn
+ * Date : 06/25/2012
+ */
+/******************************
+* 头部
+******************************/
+/**
+ * 首页预订入口
+ */
+/* 艺术文字标题 */
+.book .book-item .book-title span,
+.aside-book .aside-book-title span {
+    background-position: 0 0;
+}
+.book .search-item .search-title span,
+.aside-book .aside-order-search-title span {
+    background-position: 0 -72px;
+}
+/* 首页预订选项卡切换控制器 */
+.book-tab .tab-trigger a.switch-book {
+    background-position:0 0;
+}
+.book-tab .tab-trigger .tab-trigger-current .switch-book {
+    background-position: 0 -35px;
+}
+.book-tab .tab-trigger .switch-search {
+    background-position: -112px 0;
+}
+.book-tab .tab-trigger .tab-trigger-current .switch-search {
+    background-position: -112px -35px;
+}
+/* 搜索按钮 */
+.book .book-item .button-order-search {
+    background-position: 0 0;
+}
+.book .search-item .button-order-search {
+    background-position: 0 -87px;
+}
+/**
+ * 浮动模块
+ */
+ /* 阿里旺旺 */
+.float-social .wangwang span {
+    background-position: -45px 0;
+}
+/* 电子邮件 */
+.float-social .email span {
+    background-position: -45px -55px;
+}
+/* 在线客服 */
+.float-social .online-service span {
+    background-position: -45px -110px;
+}
+/* QQ交谈 */
+.float-social .qq span {
+    background-position: -45px -165px;
+}
+/* Compare tool */
+.compare-bar .mini {
+    background-position: 0 -15px;
+}
